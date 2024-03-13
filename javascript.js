@@ -6,28 +6,18 @@ const resizeBtn = document.querySelector(".resizeBtn");
 let x = 16;
 
 resizeBtn.addEventListener("click", () => {
-    do {
-        x = prompt("What size would you like the grid to be?");
-    }while(x < 16 && n >90);
+    let msg = prompt("Please enter a number between 1-100", "16");
 
-    while (canvas.firstChild) {
-        canvas.removeChild(canvas.lastChild);
+    if (parseInt(msg) <= 100 && parseInt(msg) > 0) {
+        canvas.replaceChildren();
+        createGrid(parseInt(msg));
     }
-    
-    createGrid(x);
+
+    else if (parseInt(msg) > 100 || parseInt(msg) < 0){
+        alert('Invalid Number');
+    }
+
 })
-
-function changeSize(){
-    let num = prompt("What size would you like the grid to be?");
-
-    if (num <= 100){
-        createGrid(num)
-    }
-    
-    if (num <= 100){
-        
-    }
-}
 
 function createRow(rowNum) {
     for (let i = 0; i < rowNum; i++) {
