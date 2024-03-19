@@ -4,6 +4,7 @@ const columns = document.getElementsByClassName("column");
 const resizeBtn = document.querySelector(".resizeBtn");
 
 let x = 16;
+let changeColor = false;
 
 resizeBtn.addEventListener("click", () => {
     let msg = prompt("Please enter a number between 1-100", "16");
@@ -33,10 +34,20 @@ function createColumn(colmnNum) {
         for ( j = 0; j < colmnNum; j++) {
             let newColmn = document.createElement("div");
             newColmn.classList.add("column");
-            newColmn.style.backgroundColor = "white";
 
-            newColmn.addEventListener('mouseover', e=>{
-            newColmn.style.backgroundColor = "black";
+            newColmn.addEventListener('mousedown', () => {
+                newColmn.style.backgroundColor = "black"
+                changeColor = true;
+            })
+
+            newColmn.addEventListener('mouseup', () => {
+                changeColor = false;
+            })
+
+            newColmn.addEventListener('mouseover', () =>{
+                if (changeColor){
+                    newColmn.style.backgroundColor = "black";
+                }
         })
 
             rows[i].appendChild(newColmn);
