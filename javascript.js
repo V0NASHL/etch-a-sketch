@@ -2,6 +2,9 @@ const canvas = document.querySelector('.canvas');
 const rows = document.getElementsByClassName("row");
 const columns = document.getElementsByClassName("column");
 const resizeBtn = document.querySelector(".resizeBtn");
+const clearBtn = document.querySelector(".clearBtn");
+const rmvGuides = document.querySelector(".rmvGuides");
+const shwGuides = document.querySelector(".shwGuides");
 
 let x = 16;
 let changeColor = false;
@@ -38,17 +41,29 @@ function createColumn(colmnNum) {
             newColmn.addEventListener('mousedown', () => {
                 newColmn.style.backgroundColor = "black"
                 changeColor = true;
-            })
+            });
 
             newColmn.addEventListener('mouseup', () => {
                 changeColor = false;
-            })
+            });
 
             newColmn.addEventListener('mouseover', () =>{
                 if (changeColor){
                     newColmn.style.backgroundColor = "black";
                 }
-        })
+            });
+
+            clearBtn.addEventListener('click', () => {
+                newColmn.style.backgroundColor = ""
+            });
+
+            rmvGuides.addEventListener('click', () => {
+                newColmn.style.border = "0px";
+            });
+
+            shwGuides.addEventListener('click', () => {
+                newColmn.style.border = "1px solid black"
+            });
 
             rows[i].appendChild(newColmn);
         }
