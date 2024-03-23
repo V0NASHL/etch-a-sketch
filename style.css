@@ -1,3 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(204, 66, 66);
+    margin-top: 150px;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    font-size: 70px;
+    margin-bottom: 30px;
+    text-shadow: 2px 4px black;
+}
+
+.Buttons{
+    display: flex;
+    gap: 20px;
+}
+
 .canvas {
     display: flex;
     width: 700px;
@@ -6,6 +28,20 @@
     border: 4px solid black;
     border-radius: 8px;
     background-color: white;
+    margin-top: 35px;
+}
+
+.resizeBtn, .clearBtn, .rmvGuides, .shwGuides{
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-style: none;
+    background-color: rgb(47, 47, 47);
+    color: whitesmoke;
+}
+
+.resizeBtn:hover, .clearBtn:hover, .rmvGuides:hover, .shwGuides:hover{
+    background-color: rgb(84, 84, 84);
 }
 
 .row {
